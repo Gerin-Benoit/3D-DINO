@@ -315,6 +315,8 @@ def do_train(cfg, model, resume=False):
                        })
 
         # checkpointing and testing
+        do_test(cfg, model, f"training_{iteration}")
+        torch.cuda.synchronize()
         if cfg.evaluation.eval_period_iterations > 0 and (iteration + 1) % cfg.evaluation.eval_period_iterations == 0:
             do_test(cfg, model, f"training_{iteration}")
             torch.cuda.synchronize()
