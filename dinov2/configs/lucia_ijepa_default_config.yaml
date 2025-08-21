@@ -92,4 +92,4 @@ crops:
   - 1.0
   global_crops_size: 96
 evaluation:
-  eval_period_iterations: 12800
+  eval_period_iterations: 12500
